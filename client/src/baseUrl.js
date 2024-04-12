@@ -1,3 +1,3 @@
-const baseUrl = "http://localhost:3001";
+const baseUrl = "http://duywebapp2.azurewebsites.net";
 
 export default baseUrl;
