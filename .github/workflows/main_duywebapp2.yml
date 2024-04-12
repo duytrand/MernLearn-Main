@@ -16,10 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Node.js version
+      - name: Use Node.js 20
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: 20
 
       - name: npm install, build, and test
         run: |
@@ -53,6 +53,7 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
+<<<<<<< HEAD
       
       - name: Login to Azure
         uses: azure/login@v1
@@ -60,6 +61,15 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_52A5438CB154419399619B82C3D0EF5C }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_86B14ABA49BE4801A4004B975EB225A7 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6DB38429E3FB4F1EA3CB7FC3E02C9D43 }}
+=======
+      
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_83B1F0B87FB347BF8A513F4F2167A856 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F934D5171E414B8B89B53F2A5DC848A2 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_22B53ED870EB49DF97F125225BD1CBCF }}
+>>>>>>> 1ebce80 (addingshit)
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
